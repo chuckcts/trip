@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Trips{% endblock %}
+
+{% block body %}
+ <a href="/logout">Logout</a>
+
+ <h1>Trips</h1>
+ {% if trips is empty %}
+    You do not have any trips added yet.
+{%  else %}
+ <ul>
+  {% for trip in trips %}
+   <li><a href="/trips/{{ trip.id }}">
+	 {{ trip.name }}
+	</a></li>
+  {% endfor %}
+ </ul>
+ {%  endif %}
+ <br/>
+ <a href="/trips/add">Add new trip</a>
+{% endblock %}

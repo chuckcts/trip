@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New trip{% endblock %}
+
+{% block body %}
+
+    <h1>Add a new trip</h1>
+
+    {{ form_start(newForm) }}
+        {{ form_row(newForm.name) }}
+        {{ form_row(newForm.gpx_file) }}
+    {% if error is defined %}
+        <ul><li>{{ error }}</li></ul>
+    {% endif %}
+        <button type="submit" class="btn">Submit</button>
+    {{ form_end(newForm) }}
+{% endblock %}
